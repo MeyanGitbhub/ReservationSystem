@@ -33,4 +33,9 @@ public class ReservationController {
 		reservationRepository.save(reservation);
 		return "Saved";
 	}
+	
+	@GetMapping(path="/all")
+	public @ResponseBody Iterable<Reservation> getAllReservations() {
+		return reservationRepository.findAll();
+	}
 }
