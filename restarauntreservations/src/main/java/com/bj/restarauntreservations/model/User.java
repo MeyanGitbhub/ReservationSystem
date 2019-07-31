@@ -1,6 +1,8 @@
 package com.bj.restarauntreservations.model;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +22,7 @@ public class User implements UserDetails {
 	
 	private String password;
 	
-	private Collection<? extends GrantedAuthority> roles;
+	private HashSet<Role> roles;
 	
 	private boolean enabled;
 	
@@ -49,11 +51,10 @@ public class User implements UserDetails {
 		this.enabled = enabled;
 	}
 	
-	public User(String username, String password, Collection<? extends GrantedAuthority> roles) {
+	public User(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.roles = roles;
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,6 +1,5 @@
 package com.bj.restarauntreservations.controller;
 
-import java.net.http.HttpResponse;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -38,9 +37,9 @@ public class RegisterController {
 			return new ResponseEntity<String>("Error", HttpStatus.INTERNAL_SERVER_ERROR); //this needs to return error
 		}
 		String hashedPassword = passwordEncoder.encode(user.getPassword());
-		Collection<? extends GrantedAuthority> roles = Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+//		Collection<? extends GrantedAuthority> roles = Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
 		
-		UserDetails userDetails = new User(user.getUsername(), hashedPassword, roles);
+		UserDetails userDetails = new User(user.getUsername(), hashedPassword);
 		userDetailsManager.createUser(userDetails);
 		return new ResponseEntity<String>("Registration Success",HttpStatus.OK);
 		
