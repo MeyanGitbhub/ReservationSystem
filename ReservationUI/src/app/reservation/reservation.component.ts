@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
+  matInput: any;
   constructor() { }
 
   ngOnInit() {
