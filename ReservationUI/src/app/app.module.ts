@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { MatInputModule } from '@angular/material';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

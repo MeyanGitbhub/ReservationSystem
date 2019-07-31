@@ -3,8 +3,8 @@
         <p>Make Your Reservation</p>
     </div>
 </div>
+<form class="">
 <div class="row">
-    
     <div class="col-lg-3">
         <mat-form-field>
             <input matInput  placeholder="First Name" value="">
@@ -27,5 +27,22 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <mat-form-field>
+            <mat-label>Reservation Time</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let reservationTime of reservationTimes" [value]="reservationTime">
+                    {{reservationTime}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Party Size</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let partySize of partySizes" [value]="partySize">
+                    {{partySize}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 </div>
+</form>
